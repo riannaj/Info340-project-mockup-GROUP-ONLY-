@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.jsx";
 
 const HabitSignUp = () => {
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ const HabitSignUp = () => {
         <h1>Habit Hive</h1>
       </header>
 
-      <Navbar />
+      {/* Removed the top nav bar */}
 
       <main className="content">
         <form>
