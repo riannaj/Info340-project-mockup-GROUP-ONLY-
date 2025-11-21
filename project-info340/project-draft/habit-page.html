@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Romina Foroudi, Rianna Joseph, Kat Khoroshilova, Varsha Venkatesan">
+    <meta name="description" content="Track, edit, and complete your Habit Hive routines.">
+    <title>Habit Hive - My Habits</title>
+    <link rel="icon" href="img/bee-buddy.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="mobile-container app-page habit-page">
+        
+        <header class="header">
+            <h1>My Habits</h1>
+        </header>
+
+        <nav class="nav-bar" aria-label="Primary">
+            <a class="nav-item" href="index.html">Welcome</a>
+            <a class="nav-item" href="home.html">Home</a>
+            <a class="nav-item" href="habit-buddy.html">Buddy</a>
+            <a class="nav-item" href="habit-community.html">Community</a>
+            <a class="nav-item active" href="habit-page.html">Habits</a>
+            <a class="nav-item" href="calendar.html">Calendar</a>
+        </nav>
+        
+        <main class="content">
+            <div class="section">
+                <div class="habits-header">
+                    <h2>Active Habits</h2>
+                    <a class="btn btn-primary btn-small" href="habit-creator.html">+ Add Habit</a>
+                </div>
+                
+                <div class="habits-list">
+                    <div class="habit-item">
+                        <div class="habit-info">
+                            <div class="habit-header">
+                                <h3 class="habit-name">Drink 8 glasses of water</h3>
+                                <span class="habit-category">Health</span>
+                            </div>
+                            <p class="habit-description">Stay hydrated throughout the day</p>
+                            <div class="habit-meta">
+                                <span class="habit-frequency">Daily</span>
+                                <span class="habit-streak">5 day streak</span>
+                            </div>
+                        </div>
+                        <div class="habit-actions">
+                            <button class="habit-toggle completed" aria-label="Mark habit as complete">✓</button>
+                        </div>
+                    </div>
+                    
+                    <div class="habit-item">
+                        <div class="habit-info">
+                            <div class="habit-header">
+                                <h3 class="habit-name">Read for 30 minutes</h3>
+                                <span class="habit-category">Learning</span>
+                            </div>
+                            <p class="habit-description">Daily reading habit</p>
+                            <div class="habit-meta">
+                                <span class="habit-frequency">Daily</span>
+                                <span class="habit-streak">3 day streak</span>
+                            </div>
+                        </div>
+                        <div class="habit-actions">
+                            <button class="habit-toggle" aria-lable="Mark habit as completed">○</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Today's Progress</h2>
+                <div class="progress-summary">
+                    <div class="progress-item">
+                        <span class="progress-label">Completed</span>
+                        <span class="progress-value">1</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Total</span>
+                        <span class="progress-value">2</span>
+                    </div>
+                    <div class="progress-item">
+                        <span class="progress-label">Streak</span>
+                        <span class="progress-value">5</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+         
+        <footer class="site-footer">
+            <p>&copy; 2025 Habit Hive</p>
+        </footer>
+    </div>
+
+</body>
+</html>
