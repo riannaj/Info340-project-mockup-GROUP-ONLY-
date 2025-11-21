@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -15,28 +15,10 @@ const categories = [
 
 const HabitCreator = () => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    habitName: "",
-    habitDescription: "",
-    habitCategory: "",
-    frequency: "",
-    reminderTime: "",
-    difficulty: "medium",
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, this would save to a backend
-    // For now, just navigate away
-    console.log("Form submitted:", formData);
+    // Just navigate away - form is not interactive
     navigate("/habits");
   };
 
@@ -62,9 +44,7 @@ const HabitCreator = () => {
                 id="habitName"
                 name="habitName"
                 placeholder="e.g., Drink 8 glasses of water"
-                value={formData.habitName}
-                onChange={handleChange}
-                required
+                defaultValue=""
               />
             </div>
 
@@ -75,20 +55,13 @@ const HabitCreator = () => {
                 name="habitDescription"
                 placeholder="Add a description for your habit..."
                 rows="3"
-                value={formData.habitDescription}
-                onChange={handleChange}
+                defaultValue=""
               />
             </div>
 
             <div className="form-group">
               <label htmlFor="habitCategory">Category</label>
-              <select
-                id="habitCategory"
-                name="habitCategory"
-                value={formData.habitCategory}
-                onChange={handleChange}
-                required
-              >
+              <select id="habitCategory" name="habitCategory" defaultValue="">
                 <option value="">Select a category</option>
                 {categories.map((cat) => (
                   <option key={cat.value} value={cat.value}>
@@ -100,13 +73,7 @@ const HabitCreator = () => {
 
             <div className="form-group">
               <label htmlFor="frequency">Frequency</label>
-              <select
-                id="frequency"
-                name="frequency"
-                value={formData.frequency}
-                onChange={handleChange}
-                required
-              >
+              <select id="frequency" name="frequency" defaultValue="">
                 <option value="">How often?</option>
                 <option value="daily">Daily</option>
                 <option value="weekly">Weekly</option>
@@ -120,8 +87,7 @@ const HabitCreator = () => {
                 type="time"
                 id="reminderTime"
                 name="reminderTime"
-                value={formData.reminderTime}
-                onChange={handleChange}
+                defaultValue=""
               />
             </div>
 
@@ -134,8 +100,7 @@ const HabitCreator = () => {
                       type="radio"
                       name="difficulty"
                       value={level}
-                      checked={formData.difficulty === level}
-                      onChange={handleChange}
+                      defaultChecked={level === "medium"}
                     />
                     <span className="difficulty-label">
                       {level.charAt(0).toUpperCase() + level.slice(1)}

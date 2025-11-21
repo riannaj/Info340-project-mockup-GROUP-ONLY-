@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
+import { useNavigate } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -50,10 +50,11 @@ const HabitItem = ({ habit, onToggle }) => (
 );
 
 const HabitPage = () => {
+  const navigate = useNavigate();
   const [habits, setHabits] = useState(initialHabits);
 
+  // THIS IS THE ONLY INTERACTIVE FEATURE - habit toggle
   const handleToggle = (id) => {
-    // Simple function to toggle habit completion
     const updatedHabits = habits.map((habit) => {
       if (habit.id === id) {
         return { ...habit, completed: !habit.completed };
@@ -80,9 +81,12 @@ const HabitPage = () => {
         <div className="section">
           <div className="habits-header">
             <h2>Active Habits</h2>
-            <Link to="/create" className="btn btn-primary btn-small">
+            <button 
+              className="btn btn-primary btn-small"
+              onClick={() => navigate("/create")}
+            >
               + Add Habit
-            </Link>
+            </button>
           </div>
 
           <div className="habits-list">

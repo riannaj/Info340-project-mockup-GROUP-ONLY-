@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -10,31 +10,11 @@ const monthNames = [
 ];
 
 const Calendar = () => {
-  // Simple state for current month (0-11) and year
-  const [currentMonth, setCurrentMonth] = useState(0); // January = 0
-  const [currentYear, setCurrentYear] = useState(2024);
+  // Static calendar - no interactivity
+  const currentMonth = 0; // January
+  const currentYear = 2024;
 
-  // Simple functions to change month
-  const prevMonth = () => {
-    if (currentMonth === 0) {
-      setCurrentMonth(11);
-      setCurrentYear(currentYear - 1);
-    } else {
-      setCurrentMonth(currentMonth - 1);
-    }
-  };
-
-  const nextMonth = () => {
-    if (currentMonth === 11) {
-      setCurrentMonth(0);
-      setCurrentYear(currentYear + 1);
-    } else {
-      setCurrentMonth(currentMonth + 1);
-    }
-  };
-
-  // Hardcoded calendar days for January 2024 (from the HTML)
-  // This makes it simple - just static data for one month
+  // Hardcoded calendar days for January 2024
   const calendarDays = [
     { day: 29, isOtherMonth: true },
     { day: 30, isOtherMonth: true },
@@ -97,13 +77,9 @@ const Calendar = () => {
       <main className="content">
         <div className="section">
           <div className="calendar-header">
-            <button className="nav-btn" aria-label="Previous month" onClick={prevMonth}>
-              ‹
-            </button>
+            <div className="nav-btn" style={{ visibility: "hidden" }}>‹</div>
             <h2>{monthNames[currentMonth]} {currentYear}</h2>
-            <button className="nav-btn" aria-label="Next month" onClick={nextMonth}>
-              ›
-            </button>
+            <div className="nav-btn" style={{ visibility: "hidden" }}>›</div>
           </div>
 
           <div className="calendar-grid">

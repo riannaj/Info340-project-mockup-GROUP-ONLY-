@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router";
+import { useLocation } from "react-router";
 
 const Navbar = () => {
   const location = useLocation();
@@ -17,13 +17,13 @@ const Navbar = () => {
       {navItems.map((item) => {
         const isActive = location.pathname === item.path;
         return (
-          <Link
+          <a
             key={item.path}
-            to={item.path}
+            href={item.path}
             className={`nav-item ${isActive ? "active" : ""}`}
           >
             {item.label}
-          </Link>
+          </a>
         );
       })}
     </nav>
@@ -31,4 +31,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

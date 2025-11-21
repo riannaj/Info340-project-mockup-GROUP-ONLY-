@@ -1,6 +1,5 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router";
-
 import Landing from "./pages/Landing.jsx";
 import HabitHome from "./pages/HabitHome.jsx";
 import HabitBuddy from "./pages/HabitBuddy.jsx";
